@@ -1,0 +1,172 @@
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: #ebebeb;
+    margin: 0 auto;
+}
+
+#B_Card {
+    height: 80%;
+    width: 80%;
+    background-color: azure;
+    margin: 5% auto;
+    border: 2px solid rgb(2, 2, 66);
+    border-radius: 25px;
+    padding: 0.5%;
+    box-shadow: 5px 8px 12px black;
+}
+
+.Contents {
+    width: 47%;
+    height: 97%;
+    margin: 0.5% auto;
+    margin-left: 1.3%;
+    border: 1px;
+    border-radius: 25px;
+    padding: 0.5%;
+    float: left;
+}
+
+.Photo {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+    transition: all 500ms ease;
+}
+
+.Photo img{
+    background-size: cover;
+    border-radius: 50%;
+    border: 4px solid rgb(2, 2, 66);
+}
+
+.Photo:hover{
+    background-size: cover;
+    border-radius: 50%;
+    border: 4px solid rgb(66, 11, 1);
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.Info {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0.2% auto;
+}
+
+.Robot {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.Robot img {
+    position: absolute;
+    width: 75%;
+    height: 100%;
+    opacity: 0.2;
+    background-size: contain;
+    margin: 0.2% auto;
+    z-index: 10;
+}
+
+.Own_Info {
+    position: absolute;
+    width: 100%;
+    height: 15%;
+    font-family: 'Brush Script MT', cursive;
+    text-align: -moz-center;
+    margin: 0.3% auto;
+    padding: 0.4%;
+    z-index: 20;
+}
+
+.Own_Info:nth-of-type(2) {
+    top: 10%;
+    font-size: larger;
+}
+
+.Own_Info:nth-of-type(3) {
+    top: 20%;
+}
+
+.Own_Info:nth-of-type(4) {
+    top: 25%;
+}
+
+.Box {
+    position:absolute;
+    width: 80%;
+    height: 8%;
+    display: flex;
+    vertical-align: middle;
+    z-index: 30;
+}
+
+.Icon_Box {
+    position: relative;
+    width: 10%;
+    height: 100%;
+}
+
+.Icon_Box img {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    transition: all 500ms ease;
+}
+
+.Icon_Box:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.Text_Box {
+    position: relative;
+    width: 75%;
+    height: 100%;
+    justify-content: left;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.Box:nth-of-type(5) {
+    top: 35%;
+}
+.Box:nth-of-type(6) {
+    top: 45%;
+}
+.Box:nth-of-type(7) {
+    top: 55%;
+}
+.Box:nth-of-type(8) {
+    top: 65%;
+}
+.Box:nth-of-type(9) {
+    top: 75%;
+}
+
+a {
+    color: black;
+}
+
+a:hover {
+    color: red;
+    cursor: pointer;
+}
+
+a:active {
+    color: blue;
+}
