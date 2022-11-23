@@ -1,0 +1,47 @@
+    /* FLEXBOX  
+    Diseño de caja flexible 
+    display : flex (Obligatorio)
+    flex-direction --> determina la direccion de visualizacion de los elementos
+    flex-direction: column o row
+    flex-wrap --> Evita el salto de linea
+    */
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: #ebebeb;
+    margin: 0 auto;
+}
+.box {
+    width: 80%;
+    border: solid 1px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px auto;
+}
+
+.item {
+    border: solid 1px;
+    width: 50px;
+}
+
+.a {
+    flex: 1;
+}
+
+.b {
+    flex: 1;
+}
+
+.c {
+    flex: 4;
+}

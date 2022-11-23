@@ -1,0 +1,40 @@
+    /* GRID CSS  
+    */
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: #ebebeb;
+    margin: 0 auto;
+}
+
+/*
+    grid-template-column --> determina las dimensiones de las columnas generadas.
+*/
+.gridlayout_col{
+    border: 1px solid;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 30% auto;
+}
+
+/*
+    grid-template-rows --> determina las dimensiones de las filas generadas.
+*/
+.gridlayout_rows{
+    border: 1px solid;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 50px 10px 30%;
+}
+
+.caja{
+    border: solid 1px;
+}
