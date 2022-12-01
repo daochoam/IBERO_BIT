@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BITmath</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <!-- Own Styles CSS -->
+    <link rel="stylesheet" href="./CSS/index.css">
+    <!-- Matematica Font -->
+    <link href="https://fonts.cdnfonts.com/css/matematica" rel="stylesheet">
+    <!-- Google Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body">
+    <div class="container Calculator">
+        <div class="Brand">
+            <div class="Photo"><img src="./Images/Integral.png" alt="Integral"></div>
+            <div class="Name">&beta;&Iota;&#882;MATH...</div>
+        </div>
+        <form id="Form_1" name="formu" value="Reset form">
+            <div id="layer1" style="color: white;">
+                Número A: <input type="Text" id="Number_A" size="60%">
+            </div>
+            <div id="layer2" style="color: white;">
+                Número B: <input type="Text" id="Number_B" size="60%">
+            </div>
+            
+        </form>
+        <div class="row row-cols-4 KeyBoard">
+            <div class="col-6 "><button type="button" onclick="Divided()">/</button></div>
+            <div class="col-6 "><button type="button" onclick="Multiply()">*</button></div>
+            <div class="col-6 "><button type="button" onclick="Subtract()">-</button></div>
+            <div class="col-6 "><button type="button" onclick="Add()">+</button></div>
+            <div class="col-12 "><button type="button" onclick="Reset()" style="color:rgb(19, 65, 5)"><b>CE</b></button>
+            </div>
+        </div>
+        <div class="Result" id="Solve"></div>
+    </div>
+    </div>
+    <!-- jQuery -> biblioteca de JavaScript rica en funciones empleada para el recorrido y la manipulación de documentos HTML,
+        el manejo de eventos, la animación y Ajax (Asynchronous JavaScript And XML) sean mucho más simples con una API fácil de usar
+        que funciona en una multitud de navegadores. -->
+    <script src="./js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+        integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+        crossorigin="anonymous"></script>
+    </body>
+
+</html>
