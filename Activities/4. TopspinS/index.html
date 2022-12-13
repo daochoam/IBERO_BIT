@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TopSping Store</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <!-- Own Styles CSS -->
+    <link rel="stylesheet" href="./CSS/index.css">
+    <!-- Matematica Font -->
+    <link href="https://fonts.cdnfonts.com/css/matematica" rel="stylesheet">
+    <!-- Google Fotns Lobster-->
+    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet'>
+    <link href='./Images/Ico.png' rel='icon'>
+    <!-- Google Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+            <a class="navbar-brand" href="#">
+                <a href="#" target="_blank"><img src="./Images/Logo.png" width="50" height="50"
+                        class="d-inline-block align-top" alt=""></a>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto" id="MenuElement">
+                    <li class="nav-item active btn_home">
+                        <a class="nav-link g_font" href="#">Home</a>
+                    </li>
+                    <li class="nav-item btn_blade">
+                        <a class="nav-link g_font" href="#">Blades</a>
+                    </li>
+                    <li class="nav-item btn_rubber">
+                        <a class="nav-link g_font" href="#">Rubbers</a>
+                    </li>
+                    <li class="nav-item btn_ball">
+                        <a class="nav-link g_font" href="#">Balls</a>
+                    </li>
+                    <li class="nav-item btn_table">
+                        <a class="nav-link g_font" href="#">Tables/Nets</a>
+                    </li>
+                </ul>
+                <div id="Login_Success" style="color: #fff; font-size:150%; font-family: 'Lobster'; margin: 1%;"></div>
+                <div id="login-button">
+                    <a class="link-secondary" href="#" aria-label="Login">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
+                            class="bi bi-person-circle" viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                            <path fill-rule="evenodd"
+                                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                            <title>Login</title>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div id="home_space">
+        <div class="jumbotron">
+            <h1 class="display-3 display">TopSpin Store</h1>
+            <p>
+            <h4>Tienda de Articulos deportivos de Tenis de Mesa.</h4>
+            </p>
+            <p class="text-justify">El tenis de mesa, nace en Inglaterra en 1.870, gracias a un día muy lluvioso que
+                impedía practicar el tenis de campo en un club de tenis, varios de los deportistas empezaron a jugar
+                con
+                material totalmente
+                improvisado, las paletas eran tapas de madera de cajas de tabaco, y como pelota usaron tapones de
+                corcho
+                de botellas de champagne debidamente cortadas. La mesa, una mesa de billar dividida por unos libros.
+            </p>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-3" id="btn_blade">
+                    <img class="img-responsive" src="./Images/Blades.png" alt="Blades">
+                    <div class="Title text-center btn_blade"><a href="#">Blades</a></div>
+                </div>
+                <div class="col-sm-6 col-md-3 btn_rubber" id="btn_rubber">
+                    <img class="img-responsive" src="./Images/Rubbers.png" alt="Rubbers">
+                    <div class="Title text-center" id="Blade_btn"><a href="#">Rubbers</a></div>
+                </div>
+                <div class="col-sm-6 col-md-3 btn_ball" id="btn_ball">
+                    <img class="img-responsive" src="./Images/Balls.png" alt="Balls">
+                    <div class="Title text-center" id="Balls_btn"><a href="#">Balls</a></div>
+                </div>
+                <div class="col-sm-6 col-md-3 btn_table" id="btn_table">
+                    <img class="img-responsive" src="./Images/Table.png" alt="Tables">
+                    <div class="Title text-center" id="Tables_btn"><a href="#">Tables/Net</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--------------------- Login This -------------------------->
+    <div id="Login-Form">
+        <div class="info">
+            <fieldset>
+                <div class="info_log container" style="width: 100%;">
+                    <div style="width: 100%;"><label for="uname"><b>Email:</b></label></div>
+                    <div style="width: 100%;"><input class="controls" type="text" name="Email" id="Login_Email"
+                            placeholder="Email" style="width: 100%;margin: 0%; padding: 1%;" required></div>
+
+                    <div style="width: 100%;"><label for="uname"><b>Password:</b></label></div>
+                    <div style="width: 100%;"><input class="controls" type="password" name="password"
+                            id="Login_Password" placeholder="Pasword" style="width: 100%; margin: 0%; padding: 1%;"
+                            required></div>
+                </div>
+            </fieldset>
+        </div>
+        <div class="button_login">
+            <fieldset>
+                <div class="buttons_log container" style="width: 100%;">
+                    <div id="Login_Message" style="width: 100%; margin: 0%; padding: 1%;"></div>
+                    <div class="btn" id="btn-login" style="width: 100%;font-size: 100%;">Login</div>
+                    <div id="forgot_password" style="width: 100%;"><a href="#">Have you forgotten your password?</a>
+                    </div>
+                    <div id="btn_register" style="width: 100%;margin: 0%; padding: 1%;"><a href="#">Sign up</a></div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+    <!--------------------- Register This -------------------------->
+    <div class="Register" id="Register-Form">
+        <span class="close btn-cancel" id="btn-cancel" title="Close">&times;</span>
+        <div class="Reg_info">
+            <h4> Register</h4>
+            <div id="Reg_Message" style="width: 100%;height: 10%;color:rgb(124, 252, 0);"></div>
+            <div class="container info_reg" style="margin: 0.1% auto;">
+                <label for="uname"><b>Name:</b></label>
+                <input class="controls" type="text" name="Register_Name" id="Reg_Name" placeholder="Name"
+                    style="width: 100%;" required>
+                <div id="Name_Message" style="width: 100%;height: 10%;color: #e7102df6;"></div>
+
+                <label for="uname"><b>Last Name:</b></label>
+                <input class="controls" type="text" name="Register_LastName" id="Reg_LastName" placeholder="Last Name"
+                    style="width: 100%;" required>
+                <div id="LastName_Message" style="width: 100%;height: 10%; color:rgba(231, 16, 44, 0.952);"></div>
+
+                <label for="uname"><b>e-mail:</b></label>
+                <input class="controls" type="text" name="Register_Email" id="Reg_Email" placeholder="Email"
+                    style="width: 100%;" required>
+                <div id="Email_Message" style="width: 100%;height: 10%; color:rgba(231, 16, 44, 0.952);"></div>
+
+                <label for="uname"><b>Password:</b></label>
+                <input class="controls" type="password" name="Register_Password" id="Reg_Password" placeholder="Pasword"
+                    style="width: 100%;" required>
+                <div id="Pass_Message" style="width: 100%;height: 10%; color:rgba(231, 16, 44, 0.952);"></div>
+            </div>
+        </div>
+        <div class="Reg_Buttons" style="position: relative;">
+            <fieldset>
+                <div
+                    style="position:relative; margin: 2%; padding: 2% auto; justify-content: center; display: flex; align-items: flex-end; ">
+                    <button type="submit" class="btn btn-cancel btn-outline-white btn-block" id="btn-cancel">Cancel</button>
+                    <button type="submit" class="btn btn-outline-white btn-block" id="btn-Registered">Register</button>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+
+    <div class= "Container Products" id="Products">
+        <div class="row">
+            <div class="col-sm-6 col-md-4 col-lg-3 tt_article">
+                <img src="./Images/Blades/1.jpg" alt="Blades">
+                <div class="price btn-buy" title="Buy">
+                    <p>U$191.63</p>
+                </div>
+                <div class="name-product">Tibhar Kinetic Speed</div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 tt_article">
+                <img src="./Images/Blades/2.jpg" alt="Blades">
+                <div class="price btn-buy" title="Buy">
+                    <p>U$95.00</p>
+                </div>
+                <div class="name-product">Samsonov Carbon</div>
+            </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 tt_article">
+                <img src="./Images/Blades/3.jpg" alt="Blades">
+                <div class="price btn-buy" title="Buy">
+                    <p>U$159.58 </p>
+                </div>
+                <div class="name-product">Nittaku Acoustic Carbon</div>
+            </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 tt_article">
+                <img src="./Images/Blades/4.jpg" alt="Blades">
+                <div class="price btn-buy" title="Buy">
+                    <p>U$218.16</p>
+                </div>
+                <div class="name-product">Stiga Dynasty Carbon</div>
+            </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 tt_article">
+                <img src="./Images/Blades/5.jpg" alt="Blades">
+                <div class="price btn-buy" title="Buy">
+                    <p>$157.42</p>
+                </div>
+                <div class="name-product">Darker Glorious</div>
+            </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 tt_article">
+                <img src="./Images/Blades/6.jpg" alt="Blades">
+                <div class="price btn-buy" title="Buy">
+                    <p>$71.86</p>
+                </div>
+                <div class="name-product">DHS Classic 08X</div>
+            </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 tt_article">
+                <img src="./Images/Blades/7.jpg" alt="Blades">
+                <div class="price btn-buy" title="Buy">
+                    <p>$218.66</p>
+                </div>
+                <div class="name-product">Joola Vyzaryz Trinity</div>
+            </div>
+                        <div class="col-sm-6 col-md-4 col-lg-3 tt_article">
+                <img src="./Images/Blades/8.jpg" alt="Blades">
+                <div class="price btn-buy" title="Buy">
+                    <p>$160.91</p>
+                </div>
+                <div class="name-product">Butterfly Zhang Jike T5000</div>
+            </div>
+
+        </div>
+    </div>
+    <footer class="text-white text-center text-lg-start bg-dark">
+        <!-- Grid container -->
+        <div class="container p-4">
+            <!--Grid row-->
+            <div class="row mt-4">
+                <!--Grid column-->
+                <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4">About company</h5>
+                    <p>
+                        Table tennis sporting goods store, more than 12 years in the market, leader in sales, offering the highest range of sports equipment.
+                    </p>
+                    <h5 class="text-uppercase mb-4">Acerca de la Compañia</h5>
+
+                    <p>
+                        Tienda de articulos deportivos de tenis de mesa, mas de 12 años en el mercado, lider en ventas, ofreciendo la gama mas alta de material deportivo.
+                    </p>
+
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4 pb-1">ENCUENTRA LO QUE BUSCAS</h5>
+
+                    <div class="form-outline form-white mb-4">
+                        <input type="text" id="formControlLg" class="form-control form-control-lg" />
+                        <label class="form-label" for="formControlLg">Search</label>
+                    </div>
+
+                    <ul class="fa-ul" style="margin-left: 1.65em;">
+                        <li class="mb-3">
+                            <span class="fa-li"><i class="fas fa-home"></i></span><span class="ms-2">Bogota, Carrera 57 #65-26, Colombia</span>
+                        </li>
+                        <li class="mb-3">
+                            <span class="fa-li"><i class="fas fa-envelope"></i></span><span
+                                class="ms-2"><a  href="#">contact@tspinstore.com.co</a></span>
+                        </li>
+                        <li class="mb-3">
+                            <span class="fa-li"><i class="fas fa-phone"></i></span><span class="ms-2">+ 48 234
+                                567 88</span>
+                        </li>
+                    </ul>
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="text-uppercase mb-4">MANTENTE ACTUALIZADO</h5>
+    
+                    <div class="form-outline form-white mb-4">
+                        <input type="email" id="form5Example2" class="form-control" />
+                        <label class="form-label" for="form5Example2">Email address</label>
+                    </div>
+                    <div>
+                    <button type="submit" class="btn btn-outline-white btn-block" style="width: 100%;height: auto;">Subscribe</button>
+                    </div>
+                </div>
+                <!--Grid column-->
+            </div>
+            <!--Grid row-->
+        </div>
+    </footer>
+    </div>
+
+    <!-- jQuery -> biblioteca de JavaScript rica en funciones empleada para el recorrido y la manipulación de documentos HTML,
+        el manejo de eventos, la animación y Ajax (Asynchronous JavaScript And XML) sean mucho más simples con una API fácil de usar
+        que funciona en una multitud de navegadores. -->
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+        integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+        crossorigin="anonymous"></script>
+    <script src="./js/index.js" type="module"></script>
+</body>
+
+</html>
