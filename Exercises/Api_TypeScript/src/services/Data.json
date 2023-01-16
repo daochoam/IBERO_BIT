@@ -1,0 +1,37 @@
+[
+    {
+        "id":1,
+        "date":"2017-05-11",
+        "weather":"sunny",
+        "visibility":"good",
+        "comment":""
+    },
+    {
+        "id":1,
+        "date":"2019-04-21",
+        "weather":"rainy",
+        "visibility":"good",
+        "comment":""
+    },
+    {
+        "id":1,
+        "date":"2020-03-31",
+        "weather":"windy",
+        "visibility":"poor",
+        "comment":""
+    },
+    {
+        "id":1,
+        "date":"2022-08-08",
+        "weather":"cloudy",
+        "visibility":"bad",
+        "comment":""
+    },
+    {
+        "id":1,
+        "date":"2012-01-26",
+        "weather":"sunny",
+        "visibility":"good",
+        "comment":""
+    }
+]

@@ -1,0 +1,23 @@
+{
+    "menu": [
+        {
+            "Lvl_1": "Home"
+        },
+        {
+            "Lvl_1": "Blades",
+            "Lvl_2": [
+                "Number Layers",
+                "Blade Material",
+                "Blade Type"
+            ]
+        },
+        {
+            "Lvl_1": "Rubbers",
+            "Lvl_2": [
+                "Antispin",
+                "Inverted",
+                "Long pips",
+                "Short pips"
+            ]
+        }]
+}
