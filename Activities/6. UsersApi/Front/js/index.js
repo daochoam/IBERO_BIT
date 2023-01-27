@@ -41,12 +41,6 @@ function Load_Items() {
 */
 
 /*********  BUTTONS ********/
-$(".btn-cancel").on("click", function (event) {
-    Clean_Register();
-    Clean_Messages();
-    document.getElementById("Register-Form").style.display = 'none';
-});
-
 $("#login-button").on("click", function (event) {
     if (document.getElementById("Login-Form").style.display === ""
         || document.getElementById("Login-Form").style.display === "none") {

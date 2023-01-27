@@ -1,6 +1,6 @@
-var UserModels = {
-
-}
+var UserModels = {}
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
 
 function Names_Format(word) {
     if (typeof word != 'string') {

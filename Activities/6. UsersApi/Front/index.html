@@ -21,6 +21,26 @@
 </head>
 
 <body>
+    <script>
+        $(".btn-cancel").on("click", function (event) {
+            // WARNING: For POST requests, body is set to null by browsers.
+            var data = "cedula=78953843&nombres=Dan%20Francisco&apellidos=Ochoa%20Mor%C3%B3n&direccion=KR%207%2064%2028&telefono=3178993040&edad=18&estadocivil=Soltero";
+
+            var xhr = new XMLHttpRequest();
+            xhr.withCredentials = true;
+
+            xhr.addEventListener("readystatechange", function() {
+            if(this.readyState === 4) {
+                console.log(this.responseText);
+            }
+            });
+
+            xhr.open("POST", "http://localhost:3000/Usuarios/Guardar");
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+            xhr.send(data);
+        })
+    </script>
     <header>
     <!--------------------- Register This -------------------------->
     <div class="Register" id="Register-Form">
@@ -60,22 +80,17 @@
                 <div id="Email_Message" style="width: 100%;height: 10%; color:rgba(231, 16, 44, 0.952);"></div>
 
                 <label for="uname"><b>Marital Status:</b></label>
-                <input class="controls" type="text" name="Register_MaritalS" id="Reg_MaritalS" placeholder="MaritalS"
+                <input class="controls" type="text" name="Register_MaritalS" id="Reg_MaritalS" placeholder="Marital Status"
                     style="width: 100%;" required>
                 <div id="Email_Message" style="width: 100%;height: 10%; color:rgba(231, 16, 44, 0.952);"></div>
 
             </div>
         </div>
         <div class="Reg_Buttons" style="position: relative;">
-            <fieldset>
-                <div
-                    style="position:relative; margin: 2%; padding: 2% auto; justify-content: center; display: flex; align-items: flex-end; ">
-                    <button type="submit" class="btn btn-cancel btn-outline-white btn-block" id="btn-cancel">Guardar</button>
-                    <button type="submit" class="btn btn-outline-white btn-block" id="btn-Registered">Listar</button>
-                    <button type="submit" class="btn btn-cancel btn-outline-white btn-block" id="btn-cancel">Modificar</button>
-                    <button type="submit" class="btn btn-outline-white btn-block" id="btn-Registered">Borrar</button>
-                </div>
-            </fieldset>
+            <div onclick="Guardar()" class="btn " id="btn-Guardar">Guardar</div>
+            <div onclick="Listar()" class="btn " id="btn-Listar">Listar</div>           
+            <div onclick="Modificar()" class="btn " id="btn-Modificar">Modificar</div>
+            <div onclick="Borrar()" class="btn " id="btn-Borrar">Borrar</div>
         </div>
     </div>
     <!-- jQuery -> biblioteca de JavaScript rica en funciones empleada para el recorrido y la manipulación de documentos HTML,

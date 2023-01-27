@@ -53,7 +53,7 @@ UsersModels.CargarId = function(post,callback) {
 }
 /*=============      UPDATE      ===============*/
 UsersModels.ActualizarId = function(post,callback) {
-    UsersDB.findById(post.Id,{
+    UsersDB.findByIdAndUpdate(post.Id,{
         Code: post.Code,
         Name: post.Name,
     },(err,doc)=>{
