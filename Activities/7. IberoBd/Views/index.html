@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TopSping Store</title>
+    <!-- Own Styles CSS -->
+    <link rel="stylesheet" href="./CSS/index.css" />
+    <!-- Matematica Font -->
+    <link href="https://fonts.cdnfonts.com/css/matematica" rel="stylesheet" />
+    <!-- Google Fotns Lobster-->
+
+    <link href="./Images/Ico.png" rel="icon" />
+    <!-- Google Icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!--------------------- Register This -------------------------->
+    <form>
+        <div class="Register-1">
+          <div class="btn-close" id="btn-cancel" title="Close">&times;</div>
+            
+            
+                <h2 class="Title-1">Register</h2>
+                <div id="Reg_Message" style="width: 100%; height: 10%; color: rgb(124, 252, 0)"></div>
+                
+                <div class="container" style="margin: 0.1% auto">
+                    <label for="uname"><b>Name:</b></label>
+                    <input type="text" name="Register_Name" id="Reg_Name" placeholder="Name" required/>
+                    <div class="Alert" id="Name_Message"></div>
+                    
+                    <label for="uname"><b>e-mail:</b></label>
+                    <input type="text"name="Register_Email" id="Reg_Email" placeholder="Email" required />
+                    <div class="Alert" id="Pass_Message"></div>
+                    
+                    <label for="uname"><b>Password:</b></label>
+                    <input type="password" name="Register_Password" id="Reg_Password" placeholder="Password"required/>
+                    <div class="Alert" id="Email_Message"></div>
+
+                </div>
+
+          <div class="container Reg-btns">
+            <div onclick="Guardar()" class="btn" id="btn-Guardar">Guardar</div>
+            <div onclick="Listar()" class="btn" id="btn-Listar">Listar</div>
+            <div onclick="Modificar()" class="btn" id="btn-Modificar">Modificar</div>
+            <div onclick="Borrar()" class="btn" id="btn-Borrar">Borrar</div>
+          </div>
+
+
+      </div>
+    </form>
+    <!-- jQuery -> biblioteca de JavaScript rica en funciones empleada para el recorrido y la manipulación de documentos HTML,
+        el manejo de eventos, la animación y Ajax (Asynchronous JavaScript And XML) sean mucho más simples con una API fácil de usar
+        que funciona en una multitud de navegadores. -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.js"
+      integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+      integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/index.js" type="module"></script>
+  </body>
+</html>
