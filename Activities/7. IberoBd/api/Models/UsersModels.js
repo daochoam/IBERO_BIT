@@ -10,13 +10,13 @@ var UsersSchema = new Schema({
     Email:String,
 })
 
-const UsersDB = mongoose.model('Users',UsersSchema)
+const IberoBdDanielOchoa = mongoose.model('Users',UsersSchema)
 
 /*============= Request Methods  ===============*/
 /*=============     (CRUD)       ===============*/
 /*=============     CREATE       ===============*/
 UsersModels.Guardar = function(post,callback) {
-    const instance = new UsersDB
+    const instance = new IberoBdDanielOchoa
     instance.Code = post.Code
     instance.Name = post.Name
     instance.Email = post.Email
@@ -33,7 +33,7 @@ UsersModels.Guardar = function(post,callback) {
 
 /*=============      READ       ===============*/
 UsersModels.CargarTodas = function(post,callback) {
-    UsersDB.find({},{},(err,doc)=>{
+    IberoBdDanielOchoa.find({},{},(err,doc)=>{
         if(err){
             return callback({state:false,data:err})
         }else{
@@ -43,7 +43,7 @@ UsersModels.CargarTodas = function(post,callback) {
 }
 
 UsersModels.CargarId = function(post,callback) {
-    UsersDB.findById(post.Id,{},(err,doc) =>{
+    IberoBdDanielOchoa.findById(post.Id,{},(err,doc) =>{
         if(err){
             return callback({state:false,data:err})
         }else{
@@ -53,7 +53,7 @@ UsersModels.CargarId = function(post,callback) {
 }
 /*=============      UPDATE      ===============*/
 UsersModels.ActualizarId = function(post,callback) {
-    UsersDB.findByIdAndUpdate(post.Id,{
+    IberoBdDanielOchoa.findByIdAndUpdate(post.Id,{
         Code: post.Code,
         Name: post.Name,
     },(err,doc)=>{
@@ -67,7 +67,7 @@ UsersModels.ActualizarId = function(post,callback) {
 /*=============      DELETE      ===============*/
 
 UsersModels.Eliminar = function(post,callback) {
-    UsersDB.findByIdAndDelete(post.Id,(err,doc)=>{
+    IberoBdDanielOchoa.findByIdAndDelete(post.Id,(err,doc)=>{
         if(err){
             return callback({state:false,data:err})
         }else{
