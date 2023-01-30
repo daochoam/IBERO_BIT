@@ -1,3 +1,12 @@
+import Menu from '../data/menu.json' assert {type: "json"};
+import Items from '../data/items.json' assert {type: "json"};
+
+var items_sale = Items;
+var DataBase = [];
+console.log(Items.Blades[0]);
+
+//706.67
+
 /*********  FUNCTIONS ********/
 
 function Clean_Login() {
