@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TopSping Store</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <!-- Own Styles CSS -->
+    <link rel="stylesheet" href="./CSS/index.css">
+    <!-- Matematica Font -->
+    <link href="https://fonts.cdnfonts.com/css/matematica" rel="stylesheet">
+    <!-- Google Fotns Lobster-->
+    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet'>
+    <link href='./Images/Ico.png' rel='icon'>
+    <!-- Google Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+    <!--------------------- Register This -------------------------->
+    <div class="Register" id="Register-Form">
+        <div class="Reg_info">
+            <h4> Register</h4>
+            <div id="Reg_Message" style="width: 100%;height: 10%;color:rgb(124, 252, 0);"></div>
+            <div class="container" style="margin: 0.1% auto;">
+                <input class="controls" type="number" id="Cedula" placeholder="Cedula">
+                <div class="Warm" id="Name_Message" ></div>
+
+                <input class="controls" type="text" id="Name" placeholder="Name">
+                <div class="Warm" id="Name_Message"></div>
+
+                <input class="controls" type="text" id="LastName" placeholder="Last Name">
+                <div class="Warm" id="LastName_Message"></div>
+
+
+                <input class="controls" type="text" id="Address" placeholder="Address">
+                <div class="Warm" id="Pass_Message"></div>
+
+                <input class="controls" type="number" id="Phone" placeholder="Phone">
+                <div class="Warm" id="Email_Message"></div>
+
+                <input class="controls" type="number" id="Age" placeholder="Age">
+                <div class="Warm" id="Email_Message"></div>
+
+                
+                <input class="controls" type="text" id="MaritalStatus" placeholder="Marital Status">
+                <div class="Warm" id="Email_Message"></div>
+
+            </div>
+        </div>
+        <div class="Reg_Buttons" style="position: relative;">
+            <div onclick="Guardar()" class="btn " id="btn-Guardar">Guardar</div>
+            <div onclick="Listar()" class="btn " id="btn-Listar">Listar</div>           
+            <div onclick="Modificar()" class="btn " id="btn-Modificar">Modificar</div>
+            <div onclick="Borrar()" class="btn " id="btn-Borrar">Borrar</div>
+        </div>
+    </div>
+    <script src="./js/index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+        integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

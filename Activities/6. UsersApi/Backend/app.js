@@ -1,17 +1,16 @@
 var express = require('express')
 var bodyParser = require('body-parser')
-const { response } = require('express')
+var cors = require('cors')
 
-global.userData = []
-
+global.config=require(__dirname + '/config.js').config
 global.app = express()
+global.userData = []
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
-require(__dirname + '/routes.js')
-
+/*================== Enable headers and addresses =======================*/
 app.all('*',function(request,response,next){
     var whitelist = request.headers.origin;
 
@@ -23,8 +22,7 @@ app.all('*',function(request,response,next){
     next()
 })
 
-var cors = require('cors')
-
+/*================== CORS configuration =======================*/
 app.use(cors({
     origin:function(origin,callback) {
         console.log(origin)
@@ -37,7 +35,8 @@ app.use(cors({
     }
 }))
 
+require(__dirname + '/routes.js')
 
-app.listen(3000, (req, res) => {
-    console.log('Servidor conectado por el puerto 3000')
+app.listen(config.puerto, function(){
+    console.log('Servidor conectado por el puerto '+ config.puerto)
 })

@@ -1,5 +1,4 @@
 var UserModels = require(__dirname + '/../Models/UserModels.js').users
-
 var UserController = {
 
 }
@@ -16,10 +15,10 @@ var RegValue = {
 var RegForm = {
     Id: /^[\d]{6,10}/g,
     Name: /^([A-ÿ]{3,15}\s?){1,3}$/g, // Max 3 nouns of [3-15] characters long, 1 space.
-    Phone: /^((60[1-8])|3(0[0-5]|1[0-9]|2[0-4]|33|5[0-1]))\d{7}/g, // Phone numbers in Colombia
+    Phone: /^(60[1-8]|30[0-5]|31[0-9]|32[0-4]|333|35[0-1])[\d]{7}$/g, // Phone numbers in Colombia
     Age: /^(1([8-9]|1\d|20)|[2-9]\d)$/g, // Age 18 - 120
-    MaritalStatus: /(SOLTER(O|A)|CASAD(O|A)|SEPARAD(O|A)|DIVORCIAD(O|A)|VIUD(O|A))/g,
-    Address: /^[A-Z\d\s#-]{10,}$/g,
+    MaritalStatus: /(SOLTER(O|A)|CASAD(O|A)|SEPARAD(O|A)|DIVORCIAD(O|A)|VIUD(O|A))/gi,
+    Address: /^((?!^[\d#\-\s])[A-ZÑ\d#\-\s])*$/gi,
     Email: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g,
     Password: /^[A-z!-/:-@\[-`\{-~Ññ¿¡°\d]{8,32}$/,
 }
@@ -27,21 +26,23 @@ var RegForm = {
 
 
 //CRUD
-/**************** CREATE   ****************/
-UserController.Guardar = function (req, res) {
+/********************************************************************************************************/
+/************************************       CREATE USER      ********************************************/
+/********************************************************************************************************/
+UserController.SaveUser = function (req, res) {
     var post = {
-        Id: req.body.cedula,
-        Name: req.body.nombres,
-        LastName: req.body.apellidos,
-        Address: req.body.direccion,
-        Phone: req.body.telefono,
-        Age: req.body.edad,
-        MaritalStatus: req.body.estadocivil
+        Id: req.body.Cedula,
+        Name: req.body.Name,
+        LastName: req.body.LastName,
+        Address: req.body.Address,
+        Phone: req.body.Phone,
+        Age: req.body.Age,
+        MaritalStatus: req.body.Marital
     }
 
     /*********************************************/
     /****************  Check ID   ****************/
-    if (post.Id.trim() == "", post.Id.trim() == null || post.Id.trim() == undefined) {
+    if (post.Id.trim() == ""  || post.Id.trim() == null || post.Id.trim() == undefined) {
         res.send({ state: false, message: 'The ID field is required.' });
         return false;
     }
@@ -124,18 +125,14 @@ UserController.Guardar = function (req, res) {
 
     /*********************************************/
     /*********** Check Address **************/
-    if (post.Address.trim() == "", post.Address.trim() == null || post.Address.trim() == undefined) {
+    if (post.Address.trim() == ""  || post.Address.trim() == null || post.Address.trim() == undefined) {
         res.send({ state: false, message: 'The field is required.' });
-        return false;
-    }
-    if (RegForm.Address.test(post.Address.trim()) == false) {
-        res.send({ state: false, message: 'The Address entered is not valid' })
         return false;
     }
 
     /*********************************************/
     /*********** Check Phone Number **************/
-    if (post.Phone.trim() == "", post.Phone.trim() == null || post.Phone.trim() == undefined) {
+    if (post.Phone.trim() == ""  || post.Phone.trim() == null || post.Phone.trim() == undefined) {
         res.send({ state: false, message: 'The field is required.' });
         return false;
     }
@@ -148,15 +145,10 @@ UserController.Guardar = function (req, res) {
         res.send({ state: false, message: 'The phone number must not contain non-numeric characters.' })
         return false;
     }
-    // Check that it is a Colombian phone number
-    if (RegForm.Phone.test(post.Phone) == false) {
-        res.send({ state: false, message: 'The number entered does not contain a valid phone number in Colombia.' })
-        return false;
-    }
 
     /*********************************************/
     /**************  Check Age  ******************/
-    if (post.Age.trim() == "", post.Age.trim() == null || post.Age.trim() == undefined) {
+    if (post.Age.trim() == "" || post.Age.trim() == null || post.Age.trim() == undefined) {
         res.send({ state: false, message: 'The field is required.' });
         return false;
     }
@@ -177,59 +169,119 @@ UserController.Guardar = function (req, res) {
 
     /**********************************************/
     /*********** Check Marital Status *************/
-    if (post.MaritalStatus.trim() == "", post.MaritalStatus.trim() == null || post.MaritalStatus.trim() == undefined) {
+    if (post.MaritalStatus.trim() == ""  || post.MaritalStatus.trim() == null || post.MaritalStatus.trim() == undefined) {
         res.send({ state: false, message: 'The field is required.' });
         return false;
     }
     // Check
-    if (RegForm.MaritalStatus.test(post.MaritalStatus.toUpperCase()) == false) {
+    if (RegForm.MaritalStatus.test(post.MaritalStatus) == false) {
         res.send({ state: false, message: 'The value received in the marital status field is not correct.' })
         return false;
     }
 
-
-    UserModels.Guardar(post, function (RTA) {
+    UserModels.SaveUser(post, function (RTA) {
         res.json(RTA)
     })
 }
 
-/**************** READ   ****************/
-UserController.Listar = function (req, res) {
-    UserModels.Listar(null, function (RTA) {
-        res.json(RTA)
-    })
-}
-
-/**************** UPDATE   ****************/
-UserController.Actualizar = function (req, res) {
+/********************************************************************************************************/
+/************************************    LIST USER BY CC     ********************************************/
+/********************************************************************************************************/
+UserController.ListByCC = function (req, res) {
     var post = {
-        Id: req.body.cedula,
-        //Name: req.body.nombres,
-        //LastName: req.body.apellidos,
-        //Address: req.body.direccion,
-        //Phone: req.body.telefono,
-        Age: req.body.edad
-        //MaritalStatus: req.body.estadocivil
+        Id: req.body.Cedula
     }
 
     /*********************************************/
     /****************  Check ID   ****************/
-    if (post.Id.trim() == "", post.Id.trim() == null || post.Id.trim() == undefined) {
+    if (post.Id.trim() == ""  || post.Id.trim() == null || post.Id.trim() == undefined) {
         res.send({ state: false, message: 'The ID field is required.' });
         return false;
     }
+
     if (/[^\d]/.test(post.Id.trim()) == true) {
         res.send({ state: false, message: 'The ID number must not contain non-numeric characters.' })
         return false;
     }
+
+    if (6 > post.Id.trim().length > 10) {
+        res.send({ state: false, message: 'The ID number must contain 6 to 10 digits.' })
+        return false;
+    }
+
+    if (userData.length==0){
+        res.send({ state: false, message: 'There are no registered users' })
+        return false;
+    }
+
+    var loc = userData.findIndex((item) => item.Id == post.Id)
+    if (loc == -1) {
+        res.send({ state: false, message: `There is no user registered with the Id number ${post.Id}` })
+        return false;
+    }
+
+    post.loc = loc
+    UserModels.ListByCC(post, function(RTA){
+        res.json(RTA)
+    })
+}
+
+/********************************************************************************************************/
+/**********************************    UPDATE USER BY CC     ********************************************/
+/********************************************************************************************************/
+UserController.UpdateByCC= function (req, res) {
+    var post = {
+        Id: req.body.Cedula,
+        Address: req.body.Address,
+        Phone: req.body.Phone,
+        Age: req.body.Age,
+        MaritalStatus: req.body.Marital
+    }
+
+    /*********************************************/
+    /****************  Check ID   ****************/
+    if (post.Id.trim() == ""  || post.Id.trim() == null || post.Id.trim() == undefined) {
+        res.send({ state: false, message: 'The ID field is required.' });
+        return false;
+    }
+
+    if (/[^\d]/.test(post.Id.trim()) == true) {
+        res.send({ state: false, message: 'The ID number must not contain non-numeric characters.' })
+        return false;
+    }
+
     if (6 > post.Id.trim().length > 10) {
         res.send({ state: false, message: 'The ID number must contain 6 to 10 digits.' })
         return false;
     }
 
     /*********************************************/
+    /*********** Check Address **************/
+    if (post.Address.trim() == ""  || post.Address.trim() == null || post.Address.trim() == undefined) {
+        res.send({ state: false, message: 'The field is required.' });
+        return false;
+    }
+
+    /*********************************************/
+    /*********** Check Phone Number **************/
+    if (post.Phone.trim() == ""  || post.Phone.trim() == null || post.Phone.trim() == undefined) {
+        res.send({ state: false, message: 'The field is required.' });
+        return false;
+    }
+    // Check number of digits of the phone number
+    if (post.Phone.trim().length != 10) {
+        res.send({ state: false, message: 'Enter a 10 digit phone number' })
+        return false;
+    }
+    if (/[^\d]/.test(post.Phone.trim()) == true) {
+        res.send({ state: false, message: 'The phone number must not contain non-numeric characters.' })
+        return false;
+    }
+
+
+    /*********************************************/
     /**************  Check Age  ******************/
-    if (post.Age.trim() == "", post.Age.trim() == null || post.Age.trim() == undefined) {
+    if (post.Age.trim() == ""  || post.Age.trim() == null || post.Age.trim() == undefined) {
         res.send({ state: false, message: 'The field is required.' });
         return false;
     }
@@ -248,50 +300,73 @@ UserController.Actualizar = function (req, res) {
         return false;
     }
 
+    /**********************************************/
+    /*********** Check Marital Status *************/
+    if (post.MaritalStatus.trim() == "" || post.MaritalStatus.trim() == null || post.MaritalStatus.trim() == undefined) {
+        res.send({ state: false, message: 'The field is required.' });
+        return false;
+    }
+    // Check
+    if (RegForm.MaritalStatus.test(post.MaritalStatus) == false) {
+        res.send({ state: false, message: 'The value received in the marital status field is not correct.' })
+        return false;
+    }
+
+    if (userData.length==0){
+        res.send({ state: false, message: 'There are no registered users' })
+        return false;
+    }
+
     var loc = userData.findIndex((item) => item.Id == post.Id)
     if (loc == -1) {
-        res.send({ state: false, message: 'User does not exist.' })
+        res.send({ state: false, message: `There is no user registered with the Id number ${post.Id}` })
+        return false;
     }
 
     post.loc = loc
-    UserModels.Modificar(post, function(RTA){
+    UserModels.UpdateByCC(post, function(RTA){
         res.json(RTA)
     })
 }
 
-/**************** DELETE ****************/
-UserController.Borrar = function (req, res) {
+/********************************************************************************************************/
+/************************************   DELETE USER BY CC    ********************************************/
+/********************************************************************************************************/
+UserController.DeleteByCC = function (req, res) {
     var post = {
-        Id: req.body.cedula,
-        //Name: req.body.nombres,
-        //LastName: req.body.apellidos,
-        //Address: req.body.direccion,
-        //Phone: req.body.telefono,
-        //Age: req.body.edad
-        //MaritalStatus: req.body.estadocivil
+        Id: req.body.Cedula
     }
 
     /*********************************************/
     /****************  Check ID   ****************/
-    if (post.Id.trim() == "", post.Id.trim() == null || post.Id.trim() == undefined) {
+    if (post.Id.trim() == ""  || post.Id.trim() == null || post.Id.trim() == undefined) {
         res.send({ state: false, message: 'The ID field is required.' });
         return false;
     }
+
     if (/[^\d]/.test(post.Id.trim()) == true) {
         res.send({ state: false, message: 'The ID number must not contain non-numeric characters.' })
         return false;
     }
+
     if (6 > post.Id.trim().length > 10) {
         res.send({ state: false, message: 'The ID number must contain 6 to 10 digits.' })
+        return false;
+    }
+    
+    if (userData.length==0){
+        res.send({ state: false, message: 'There are no registered users' })
         return false;
     }
 
     var loc = userData.findIndex((item) => item.Id == post.Id)
     if (loc == -1) {
-        res.send({ state: false, message: 'User does not exist.' })
+        res.send({ state: false, message: `There is no user registered with the Id number ${post.Id}` })
+        return false;
     }
-    
-    UserModels.Borrar (post, function(RTA){
+
+    post.loc = loc
+    UserModels.DeleteByCC(post, function(RTA){
         res.json(RTA)
     })
 }

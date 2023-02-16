@@ -1,6 +1,4 @@
 var UserModels = {}
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema
 
 function Names_Format(word) {
     if (typeof word != 'string') {
@@ -10,7 +8,7 @@ function Names_Format(word) {
     return word_split.map(p => p[0].toUpperCase() + p.slice(1).toLowerCase()).join(' ')
 }
 
-UserModels.Guardar = function (post, callback) {
+UserModels.SaveUser = function (post, callback) {
     userData.push({
         Id: post.Id.trim(),
         Name: Names_Format(post.Name.trim()),
@@ -24,21 +22,27 @@ UserModels.Guardar = function (post, callback) {
     return callback({ state: true, message: "User Save" })
 }
 
-UserModels.Listar = function (post, callback) {
+UserModels.ListByCC = function (post, callback) {
     if (userData.length == 0) {
         return callback({ state: false, message: 'There are no registered users' })
     }
     return callback({ state: true, datos: userData })
 }
 
-UserModels.Modificar = function (post, callback) {
-    userData[post.loc].Age = post.Age
-    return callback({ state: true, message: 'User update successfully.' })
+UserModels.UpdateByCC = function (post, callback) {
+    userData[post.loc].Address = post.Address.trim()
+    userData[post.loc].Phone = post.Phone.trim()
+    userData[post.loc].Age = post.Age.trim()
+    userData[post.loc].MaritalStatus = post.MaritalStatus.trim()
+    return callback({ state: true, message: `The registered user with #Id ${post.Id} has been updated successfully` })
 }
 
-UserModels.Borrar = function (loc, callback) {
+/*=============      DELETE      ===============*/
+
+UserModels.DeleteByCC = function (loc, callback) {
     userData.splice(loc, 1);
         return callback({ state: true, message:'User deleted successfully.' })
 }
+
 
 module.exports.users = UserModels
