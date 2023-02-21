@@ -5,22 +5,22 @@ var UserController = {
 }
 
 var RegValue = {
-    CapitaLetter: /[A-ZÑ]/g,                   // Capital Letter - No Acent
-    LowercaseLetter: /[a-zñ]/g,                // Lowercase Letter - No Acent
-    WordCharacters: /[A-ÿ]/g,                   // Word Characters
-    AcentCharacters: /À-ÿ/g,                    // Acent Characters
+    CapitaLetter: /[A-ZÑ]/,                   // Capital Letter - No Acent
+    LowercaseLetter: /[a-zñ]/,                // Lowercase Letter - No Acent
+    WordCharacters: /[A-ÿ]/,                   // Word Characters
+    AcentCharacters: /À-ÿ/,                    // Acent Characters
     SpecialCharacters: /[!-/:-@\[-`\{-~¿¡°]/g,  // Special Characters
-    Numbers: /\d/g,                             // Numbers Characters
-    MultiSpace: /[\s]{2,}/g                      // Multi-Space characters
+    Numbers: /\d/,                             // Numbers Characters
+    MultiSpace: /[\s]{2,}/                      // Multi-Space characters
 }
 var RegForm = {
-    Id: /^[\d]{6,10}/g,
-    Name: /^([A-ÿ]{3,15}\s?){1,3}$/g, // Max 3 nouns of [3-15] characters long, 1 space.
-    Phone: /^((60[1-8])|3(0[0-5]|1[0-9]|2[0-4]|33|5[0-1]))\d{7}/g, // Phone numbers in Colombia
-    Age: /^(1([8-9]|1\d|20)|[2-9]\d)$/g, // Age 18 - 120
-    MaritalStatus: /(SOLTER(O|A)|CASAD(O|A)|SEPARAD(O|A)|DIVORCIAD(O|A)|VIUD(O|A))/g,
-    Address: /^[A-Z\d\s#-]{10,}$/g,
-    Email: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g,
+    Id: /^[\d]{6,10}/,
+    Name: /^([A-ÿ]{3,15}\s?){1,3}$/, // Max 3 nouns of [3-15] characters long, 1 space.
+    Phone: /^((60[1-8])|3(0[0-5]|1[0-9]|2[0-4]|33|5[0-1]))\d{7}/, // Phone numbers in Colombia
+    Age: /^(1([8-9]|1\d|20)|[2-9]\d)$/, // Age 18 - 120
+    MaritalStatus: /(SOLTER(O|A)|CASAD(O|A)|SEPARAD(O|A)|DIVORCIAD(O|A)|VIUD(O|A))/,
+    Address: /^[A-Z\d\s#-]{10,}$/,
+    Email: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
     Password: /^[A-z!-/:-@\[-`\{-~Ññ¿¡°\d]{8,32}$/,
 }
 

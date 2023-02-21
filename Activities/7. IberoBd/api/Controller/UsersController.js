@@ -3,49 +3,49 @@ var UsersController = {}
 
 var RegValue = {
     // Capital Letter - No Acent:
-    CapitaLetter: /[A-ZÑ]/g,
+    CapitaLetter: /[A-ZÑ]/,
     // Lowercase Letter - No Acent:
-    LowercaseLetter: /[a-zñ]/g,
+    LowercaseLetter: /[a-zñ]/,
     // Word Characters
-    WordCharacters: /[A-ÿ]/g,
+    WordCharacters: /[A-ÿ]/,
     // Acent Characters:
-    AcentCharacters: /À-ÿ/g,
+    AcentCharacters: /À-ÿ/,
     // Special Characters:
-    SpecialCharacters: /[!-/:-@\[-`\{-~¿¡°]/g,
+    SpecialCharacters: /[!-/:-@\[-`\{-~¿¡°]/,
     // Numbers:
-    Numbers: /\d/g,
+    Numbers: /\d/,
     // Multi-Space characters:
-    MultiSpace: /[\s]{2,}/g,
+    MultiSpace: /[\s]{2,}/,
 }
 
 var Form = {
     Name:{
         // Special Characters:
-        SpecialCharacters: /[!-/:-@\[-`\{-~¿¡°]/g,
+        SpecialCharacters: /[!-/:-@\[-`\{-~¿¡°]/,
         // Word Characters
-        WordCharacters: /[A-ÿ]/g,
+        WordCharacters: /[A-ÿ]/,
         // Numbers:
-        Numbers: /\d/g,
+        Numbers: /\d/,
         // Multi-Space characters:
-        MultiSpace: /[\s]{2,}/g,
+        MultiSpace: /[\s]{2,}/,
     },
     Email: {
         // Check include one @.
-        Symbol: /@/g,
+        Symbol: /@/,
         // MailUserNameM (Gmail rules): Gmail!! does not include dash, underscore.
-        UserName: /^((?!^[._-])(?![._-]{2,})[a-z0-9._-](?![._-])){6,30}(?=@)/g,
+        UserName: /^((?!^[._-])(?![._-]{2,})[a-z0-9._-](?![._-])){6,30}(?=@)/,
         // MailDomain: Check the email domain structure.
-        Domain: /(?<=@)(([\w-]+\.)+[\w-]{2,4})$/g,
+        Domain: /(?<=@)(([\w-]+\.)+[\w-]{2,4})$/,
         // Special Characters:
-        SpecialCharacters: /[!-/:-@\[-`\{-~¿¡°]/g,
+        SpecialCharacters: /[!-/:-@\[-`\{-~¿¡°]/,
         // Space Characters:
-        Spaces: /([\s]{1,})/g,
+        Spaces: /([\s]{1,})/,
         // Init Special Characters:
-        InitSCharacter: /^([.])/g,
+        InitSCharacter: /^([.])/,
         // Consecutive Special Characters:
-        MultiSCharacter: /[_.-]{2,}/g,
+        MultiSCharacter: /[_.-]{2,}/,
         // Username don't finish dot character
-        CharArroba: /([_.-])(?=@)/g
+        CharArroba: /([_.-])(?=@)/
     },
 }
 
